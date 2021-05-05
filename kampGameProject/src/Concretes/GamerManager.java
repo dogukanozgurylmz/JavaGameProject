@@ -15,8 +15,14 @@ public class GamerManager implements GamerService {
 	@Override
 	public void add(Gamer gamer) {
 		
-		if (this.gamerCheckService.confirm(gamer)) {
+		if (gamerCheckService.confirm(gamer)) {
+			
 			System.out.println("--> Oyuncu eklendi : " + gamer.getFirstName());
+			
+		}else {
+			
+			System.out.println("Oyuncu eklenemedi.");
+			
 		}
 		
 	}
@@ -25,7 +31,9 @@ public class GamerManager implements GamerService {
 	public void update(Gamer gamer) {
 
 		if (this.gamerCheckService.confirm(gamer)) {
+			
 			System.out.println("--> Oyuncu güncellendi : " + gamer.getFirstName());
+			
 		}
 		
 	}

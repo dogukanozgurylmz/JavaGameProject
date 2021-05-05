@@ -1,5 +1,6 @@
 package kampGameProject;
 
+import Adapter.MernisServiceAdapter;
 import Concretes.CampaignManager;
 import Concretes.GameManager;
 import Concretes.GamerCheckManager;
@@ -17,7 +18,7 @@ public class Main {
 		gamer1.setId(1);
 		gamer1.setFirstName("Doðukan Özgür");
 		gamer1.setLastName("Yýlmaz");
-		gamer1.setNationalIdentity("12345678910");
+		gamer1.setNationalIdentity("12345678901");
 		gamer1.setBirthYear(2000);
 		
 		Gamer gamer2 = new Gamer();
@@ -70,7 +71,7 @@ public class Main {
 		
 		//-------------------------------------
 		
-		GamerManager gamerManager = new GamerManager(new GamerCheckManager());
+		GamerManager gamerManager = new GamerManager(new MernisServiceAdapter());
 		gamerManager.add(gamer1);
 		gamerManager.delete(gamer2);
 		gamerManager.update(gamer1);
